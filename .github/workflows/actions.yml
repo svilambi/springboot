@@ -32,9 +32,10 @@ jobs:
       - name: Step 4 - Versions
         run: |
           java -version
-          gradle -version
           echo "${{ github.token }}"
           echo "${{ steps.greet.outputs.time }}"
+          echo "just to test"
+          gradle -version
       - name: Step 5 - build and jar
         run: |
           gradle bootjar
