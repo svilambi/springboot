@@ -7,6 +7,12 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
       - name: List Files
         run: |
           pwd
@@ -23,6 +29,6 @@ jobs:
         run: |
           pwd
           ls -a
-          sudo apt install default-jre
           java -version
+          gradle -version
           
