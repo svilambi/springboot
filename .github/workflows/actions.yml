@@ -33,6 +33,8 @@ jobs:
         run: |
           java -version
           gradle -version
+          echo "${{ github.token }}"
+          echo "${{ steps.greet.outputs.time }}"
       - name: Step 5 - build and jar
         run: |
           gradle bootjar
