@@ -1,0 +1,33 @@
+name: Actions Worflow
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - v1.*
+    paths:
+      - "**.java"
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: payload
+        run: echo ${{ github.event.client_payload.env }}
+      - name: List Files
+        run: |
+          pwd
+          ls -a
+          echo $GITHUB_SHA 
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{ github.token }}"
+          # git clone git@github:$GITHUB_REPOSITORY
+          # git checkout $GITHUB_SHA
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: List Files After Checkout
+        run: |
+          pwd
+          ls -a
