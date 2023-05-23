@@ -3,7 +3,7 @@ name: Actions Worflow
 on:
   push:
     branches:
-      - master
+      - main
     tags:
       - v1.*
     paths:
