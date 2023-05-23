@@ -1,13 +1,7 @@
 name: Actions Worflow
 
-on:
-  push:
-    branches:
-      - main
-    tags:
-      - v1.*
-    paths:
-      - "**.java"
+on: [push]
+
 
 jobs:
   run-github-actions:
