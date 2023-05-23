@@ -13,7 +13,7 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: List Files
+      - name: Step 1 : List Files
         run: |
           pwd
           ls -a
@@ -23,13 +23,22 @@ jobs:
           echo "${{ github.token }}"
           # git clone git@github:$GITHUB_REPOSITORY
           # git checkout $GITHUB_SHA
-      - name: Checkout
+      - name: Step 2 : Checkout
         uses: actions/checkout@v1
-      - name: List Files After Checkout
+      - name: Step 3 : List Files After Checkout
         run: |
           pwd
           ls -a
+      - name: Step 4 : Versions
+        run: |
           java -version
           gradle -version
+      - name: Step 5 : build and jar
+        run: |
           gradle jar
+      - name: Step 6 : push the artifacts
+        uses: actions/upload-artifact@v2
+        with: 
+          name: assets-for-download
+          path: /home/runner/work/springboot/springboot/build/libs
           
