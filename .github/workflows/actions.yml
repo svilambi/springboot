@@ -37,7 +37,7 @@ jobs:
         run: |
           gradle bootjar
       - name: Step 6 - push the artifacts
-        uses: actions/upload-artifact@v2.2.0
+        uses: actions/upload-artifact@v3
         with: 
           name: assets-for-download
           path: /home/runner/work/springboot/springboot/build/libs
