@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class DemoController {
-	@RequestMapping("/anil")
+	@RequestMapping("/hello")
 	@ResponseBody
 	
 	public String helloWorld()
 	{
-		return "Anil Villambi";
+		return "Hello World!";
 	}
 
 }
