@@ -31,5 +31,5 @@ jobs:
           ls -a
           java -version
           gradle -version
-          gradle bootrun
+          gradle jar
           
