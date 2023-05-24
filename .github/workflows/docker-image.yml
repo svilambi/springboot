@@ -21,19 +21,13 @@ jobs:
       run: |
         pwd
         ls -a
-    - name: Step 2 - Checkout
-      uses: actions/checkout@v1
-    - name: Step 3 - List Files After Checkout
-      run: |
-        pwd
-        ls -a
-    - name: Step 4 - Versions
+    - name: Step 2 - Versions
       run: |
         java -version
         echo "just to test"
         gradle -version
-    - name: Step 5 - build and jar
+    - name: Step 3 - build and jar
       run: |
         gradle bootjar
-    - name: Build the Docker image
+    - name: Step 4 - Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
