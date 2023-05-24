@@ -1,6 +1,8 @@
 name: Actions Worflow
 
-on: [push]
+on: 
+  push:
+    branches: [feature_branch]
 
 
 jobs:
