@@ -40,5 +40,5 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         
-    - name: Step 6 - Build the Docker image
+    - name: Step 6 - Build the Docker image to dockerhub
       run: docker push svilambi/demo:$(date +%s)
