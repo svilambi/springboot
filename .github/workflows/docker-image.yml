@@ -2,7 +2,10 @@ name: Docker Image CI
 
 on:
   pull_request:
-    branches: [ "feature_branch" ]
+    types:
+    - closed
+    branches:
+    - main
 
 jobs:
 
