@@ -37,6 +37,7 @@ jobs:
         cd terraform
         ls -a
         terraform init
+        terraform validate
         terraform plan
         terraform apply --auto-approve
     - name: Step 5 - inject aws creditials
