@@ -1,0 +1,47 @@
+name: Terraform
+
+on:
+  workflow_run:
+    workflows: ["Docker Image CI"]
+    branches: [ "main" ]
+    types:
+      - completed
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: 1.1.7
+
+    - name: Step 1 - terraform version
+      run: |
+        terraform --version
+    - name: Step 2 - inject aws creditials
+      run: |
+        aws configure set aws_access_key_id ${{ secrets.TERRAFORM_ACCESS_KEY }}
+        aws configure set aws_secret_access_key ${{ secrets.TERRAFORM_SECRET_KEY }}
+        aws configure set default.region us-east-2
+        aws configure set output json
+    - name: Step 3 - List Files
+      run: |
+        pwd
+        ls -a
+    - name: Step 4 - run terraform
+      run: |
+        pwd
+        cd terraform
+        ls -a
+        terraform init
+        terraform plan
+        terraform apply --auto-approve
+    - name: Step 5 - inject aws creditials
+      run: |
+        aws configure set aws_access_key_id ${{ secrets.TERRAFORM_ACCESS_KEY_2 }}
+        aws configure set aws_secret_access_key ${{ secrets.TERRAFORM_SECRET_KEY_2 }}
+        aws configure set default.region us-east-2
+        aws configure set output json
