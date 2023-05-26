@@ -14,9 +14,9 @@ variable "aws_region_az" {
 }
 
 variable "access_key" {
-  default = "${{ secrets.TERRAFORM_ACCESS_KEY }}"
+  default = ${{ secrets.TERRAFORM_ACCESS_KEY }}
 }
 
 variable "secret_key" {
-  default = "${{ secrets.TERRAFORM_SECRET_KEY }}"
+  default = ${{ secrets.TERRAFORM_SECRET_KEY }}
 }
