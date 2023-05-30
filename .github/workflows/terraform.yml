@@ -37,7 +37,7 @@ jobs:
         cd terraform
         ls -a
         terraform init
-        terraform plan -var 'access_key= ${{ secrets.TERRAFORM_ACCESS_KEY }}' -var 'secret_key= ${{ secrets.TERRAFORM_SECRET_KEY }}'
+        terraform plan -var access_key=${{ secrets.TERRAFORM_ACCESS_KEY }} -var secret_key=${{ secrets.TERRAFORM_SECRET_KEY }}
         terraform apply --auto-approve
     - name: Step 5 - inject aws creditials
       run: |
