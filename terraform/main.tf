@@ -38,8 +38,8 @@ sudo systemctl start apache2
 sudo systemctl enable apache2
 echo "<h1>AWS Virtual Machine deployed with Terraform</h1>" | sudo tee /var/www/html/index.html
 curl -sL https://get.docker.com | bash
-docker pull svilambi/demo:05
-docker run -dit -p 8888:8888 svilambi/demo:05
+docker pull svilambi/demo:06
+docker run -dit -p 8888:8888 svilambi/demo:06
 EOF
   
     # root disk
