@@ -1,4 +1,14 @@
-# springboot
+### Springboot
+
+## Github Action Status
+
+![Workflow](https://github.com/svilambi/springboot/actions/workflows/actions.yml/badge.svg)
+
+![Workflow](https://github.com/svilambi/springboot/actions/workflows/docker-image.yml/badge.svg)
+
+![Workflow](https://github.com/svilambi/springboot/actions/workflows/terraform.yml/badge.svg)
+
+
 basic spring boot application
 
 Tools Used:
