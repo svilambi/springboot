@@ -11,7 +11,7 @@ public class DemoController {
 	
 	public String helloWorld()
 	{
-		return "Hello World 29 July today!!!!";
+		return "Hello World today!!!!";
 	}
 
 }
